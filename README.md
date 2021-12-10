@@ -1,18 +1,8 @@
 - [MiniGameEngine](#minigameengine)
-	- [Entry point](#entry-point)
-	- [Application Layer](#application-layer)
-	- [Window Layer](#window-layer)
-		- [Input](#input)
-		- [Events](#events)
-	- [Renderer](#renderer)
-	- [Reder API abstraction](#reder-api-abstraction)
-	- [Debugging support](#debugging-support)
-	- [Scripting Language](#scripting-language)
-	- [Memory Systems](#memory-systems)
-	- [Entity Component System (ECS)](#entity-component-system-ecs)
-	- [Physics](#physics)
-	- [File I/O, VFS](#file-io-vfs)
-	- [Build System](#build-system)
+	- [Hazel](#hazel)
+	- [Visual Studio Confuguration](#visual-studio-confuguration)
+	- [Entry Point](#entry-point)
+	- [Loging system](#loging-system)
 
 
 # MiniGameEngine
@@ -24,7 +14,58 @@ learn how to develop a game engine.
 - [GitHub - Cherno](https://github.com/TheCherno/Cherno)
 - [GitHub - ludumdare](https://github.com/ludumdare)
 
-## Entry point
+## Hazel
+
+Entry point
+
+Application Layer
+
+Window Layer
+
+	Input
+	Events
+
+Renderer
+
+	Reder API abstraction
+
+Debugging support
+
+	logging system
+	performance
+
+Scripting Language
+
+Memory Systems
+
+Entity Component System (ECS)
+
+Physics
+
+File I/O, VFS
+
+Build System
+
+## Visual Studio Confuguration
+
+MiniGameEngine Property Pages > Configuration Properties > General > Output Directory > $(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\
+MiniGameEngine Property Pages > Configuration Properties > General > Intermediate Directory > $(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\
+MiniGameEngine Property Pages > Configuration Properties > General > Configuration Type > Dynamic Library(.dll)
+MiniGameEngine Property Pages > Configuration Properties > General > Windows SDK Version > 10.0.19041.0
+MiniGameEngine Property Pages > Configuration Properties > General > Platform Toolset > Visual Studio 2019(v142)
+MiniGameEngine Property Pages > Configuration Properties > C/C++ > General > Additional Include Directories > $(SolutionDir)MiniGameEngine\vendor\spdlog\include;
+MiniGameEngine Property Pages > Configuration Properties > C/C++ > Preprocessor > MGE_PLATFORM_WINDOWS;MGE_BUILD_DLL;
+
+Sandbox Property Pages > Configuration Properties > General > Output Directory > $(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\
+Sandbox Property Pages > Configuration Properties > General > Intermediate Directory > $(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\
+Sandbox Property Pages > Configuration Properties > General > Configuration Type > Application(.exe)
+Sandbox Property Pages > Configuration Properties > General > Windows SDK Version > 10.0.19041.0
+Sandbox Property Pages > Configuration Properties > General > Platform Toolset > Visual Studio 2019(v142)
+Sandbox Property Pages > Configuration Properties > C/C++ > General > Additional Include Directories > $(SolutionDir)MiniGameEngine\src;$(SolutionDir)MiniGameEngine\vendor\spdlog\include;
+Sandbox Property Pages > Configuration Properties > C/C++ > Preprocessor > MGE_PLATFORM_WINDOWS;
+
+
+## Entry Point
 
 ```cpp
 __declspec(dllexport) // 导出符号，也就是定义需要导出函数的dll中给导出函数的函数声明前面加上导出符号，表示该方法可以导出给其他DLL或者exe使用。
@@ -43,34 +84,7 @@ __declspec(dllimport) // 导入符号，也就是在使用该函数的DLL或者e
 
 ```
 
-## Application Layer
+## Loging system
 
-## Window Layer
-
-### Input
-
-### Events
-
-## Renderer
-
-## Reder API abstraction
-
-## Debugging support
-
-logging system
-
-performance
-
-## Scripting Language
-
-## Memory Systems
-
-## Entity Component System (ECS)
-
-
-## Physics
-
-## File I/O, VFS
-
-## Build System
+git submodule add https://github.com/gabime/spdlog MiniGameEngine/vendor/spdlog
 

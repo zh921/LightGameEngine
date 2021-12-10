@@ -15,4 +15,4 @@ namespace MiniGameEngine {
 
 	// To be defined in Client
 	Application* CreateApplication();
-}
+} // namespace MiniGameEngine

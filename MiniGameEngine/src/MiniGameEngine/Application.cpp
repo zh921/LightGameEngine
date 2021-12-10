@@ -14,6 +14,11 @@ namespace MiniGameEngine {
 
 	void Application::Run()
 	{
-		while (true);
+		while (true)
+		{
+
+		}
 	}
-}
+
+
+} // namespace MiniGameEngine
