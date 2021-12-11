@@ -3,6 +3,7 @@
 	- [Visual Studio Confuguration](#visual-studio-confuguration)
 	- [Entry Point](#entry-point)
 	- [Loging system](#loging-system)
+	- [PreMake](#premake)
 
 
 # MiniGameEngine
@@ -87,4 +88,9 @@ __declspec(dllimport) // 导入符号，也就是在使用该函数的DLL或者e
 ## Loging system
 
 git submodule add https://github.com/gabime/spdlog MiniGameEngine/vendor/spdlog
+
+## PreMake
+
+https://github.com/premake/premake-core.git
+
 
